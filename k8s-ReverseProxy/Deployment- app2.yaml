@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-app2
+  labels:
+    app: nodejs-app2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodejs-app2
+  template:
+    metadata:
+      labels:
+        app: nodejs-app2
+    spec:
+      containers:
+      - name: nodejs-app2
+        image: hassanalisalama/nodejs-app2:V1.0
+        ports:
+        - containerPort: 3000
